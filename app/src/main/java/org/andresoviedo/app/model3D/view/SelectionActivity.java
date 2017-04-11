@@ -35,6 +35,7 @@ public class SelectionActivity extends Activity {
                 Bundle b = new Bundle();
                 b.putString("assetDir", "models/");
                 b.putString("assetFilename", "android.obj");
+                b.putBoolean("use_model_file", true);
                 intent.putExtras(b);
                 SelectionActivity.this.startActivity(intent);
             }
@@ -47,6 +48,7 @@ public class SelectionActivity extends Activity {
                 Bundle b = new Bundle();
                 b.putString("assetDir", "models/");
                 b.putString("assetFilename", "cube.obj");
+                b.putBoolean("use_model_file", false);
                 intent.putExtras(b);
                 SelectionActivity.this.startActivity(intent);
             }

@@ -27,10 +27,7 @@ public class ModelActivity extends Activity {
 
 	private String paramAssetDir;
 	private String paramAssetFilename;
-	/**
-	 * The file to load. Passed as input parameter
-	 */
-	private String paramFilename;
+
 
 	private GLSurfaceView gLView;
 
@@ -47,10 +44,8 @@ public class ModelActivity extends Activity {
 		if (b != null) {
 			this.paramAssetDir = b.getString("assetDir");
 			this.paramAssetFilename = b.getString("assetFilename");
-			this.paramFilename = b.getString("uri");
 		}
-		Log.i("Renderer", "Params: assetDir '" + paramAssetDir + "', assetFilename '" + paramAssetFilename + "', uri '"
-				+ paramFilename + "'");
+		Log.i("Renderer", "Params: assetDir '" + paramAssetDir + "', assetFilename '" + paramAssetFilename);
 
 		handler = new Handler(getMainLooper());
 
@@ -60,7 +55,7 @@ public class ModelActivity extends Activity {
 		setContentView(gLView);
 
 		// Create our 3D sceneario
-		if (paramFilename == null && paramAssetFilename == null) {
+		if (paramAssetFilename == null) {
 			scene = new ExampleSceneLoader(this);
 		} else {
 			scene = new SceneLoader(this);
@@ -207,10 +202,6 @@ public class ModelActivity extends Activity {
 				| View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 	}
 
-	public File getParamFile() {
-		return getParamFilename() != null ? new File(getParamFilename()) : null;
-	}
-
 	public String getParamAssetDir() {
 		return paramAssetDir;
 	}
@@ -219,9 +210,6 @@ public class ModelActivity extends Activity {
 		return paramAssetFilename;
 	}
 
-	public String getParamFilename() {
-		return paramFilename;
-	}
 
 	public SceneLoader getScene() {
 		return scene;

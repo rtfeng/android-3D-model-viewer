@@ -833,16 +833,13 @@ public final class Object3DBuilder {
 		return bb;
 	}
 
-	public static void loadV5Async(Activity parent, File file, String assetsDir, String assetName,
+	public static void loadV5Async(Activity parent, String assetsDir, String assetName,
 								   final Callback callback) {
-		Log.i("Loader", "Opening " + (file != null ? " file " + file : "asset " + assetsDir + assetName) + "...");
+		Log.i("Loader", "Opening " + "asset " + assetsDir + assetName + "...");
 		final InputStream modelDataStream;
 		final InputStream modelDataStream2;
 		try {
-			if (file != null) {
-				modelDataStream = new FileInputStream(file);
-				modelDataStream2 = new FileInputStream(file);
-			} else if (assetsDir != null) {
+			if (assetsDir != null) {
 				modelDataStream = parent.getAssets().open(assetsDir + assetName);
 				modelDataStream2 = parent.getAssets().open(assetsDir + assetName);
 			} else {
@@ -850,12 +847,11 @@ public final class Object3DBuilder {
 			}
 		} catch (IOException ex) {
 			throw new RuntimeException(
-					"There was a problem opening file/asset '" + (file != null ? file : assetsDir + assetName) + "'");
+					"There was a problem opening file/asset '" + assetsDir + assetName + "'");
 		}
 
 		Log.i("Loader", "Loading model...");
-		LoaderTask loaderTask = new LoaderTask(parent, file != null ? file.getParentFile() : null, assetsDir,
-				file != null ? file.getName() : assetName) {
+		LoaderTask loaderTask = new LoaderTask(parent, null, assetsDir, assetName) {
 
 			@Override
 			protected void onPostExecute(Object3DData data) {

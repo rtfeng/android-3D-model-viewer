@@ -22,16 +22,16 @@
         <activity
             android:name="org.andresoviedo.app.model3D.MainActivity"
             android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="org.andresoviedo.app.model3D.view.SelectionActivity"
             android:label="@string/title_activity_selection"
             android:parentActivityName="org.andresoviedo.app.model3D.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="org.andresoviedo.app.model3D.view.MenuActivity"
