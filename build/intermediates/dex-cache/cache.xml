@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/lyk/Library/Android/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
+        <dex dex="/Users/lyk/Documents/android-3D-model-viewer/app/build/intermediates/pre-dexed/debug/support-v4-19.1.0_e5b4bb339e7e97c4fdf09cded337f757ac8cf5cd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lyk/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.5/2852e6e05fbb95076fc091f6d1780f1f8fe35e0f/commons-io-2.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2852e6e05fbb95076fc091f6d1780f1f8fe35e0f">
+        <dex dex="/Users/lyk/Documents/android-3D-model-viewer/app/build/intermediates/pre-dexed/debug/commons-io-2.5_b0fc48efbfbbb0e35d49ea549e2d6a8bb6b80ca2.jar" />
+    </item>
+
+</items>

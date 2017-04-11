@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/lyk/Documents/android-3D-model-viewer/app/build/intermediates/res/merged/debug/layout/activity_selection.xml",
+        "source": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/layout/activity_selection.xml"
+    },
+    {
         "merged": "/Users/lyk/Documents/android-3D-model-viewer/app/build/intermediates/res/merged/debug/layout/activity_menu_item.xml",
         "source": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/layout/activity_menu_item.xml"
     },

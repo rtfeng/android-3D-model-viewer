@@ -5,6 +5,7 @@
     <string name="app_version">Version 1.0</string>
     <string name="action_settings">Settings</string>
     <!-- Activities -->
+    <string name="title_activity_selection">Menu</string>
     <string name="title_activity_menu">Menu</string>
     <string name="title_activity_demo">Demo</string>
     <string name="title_activity_text">Text</string>

@@ -4,6 +4,7 @@ import java.io.File;
 
 import org.andresoviedo.app.model3D.view.MenuActivity;
 import org.andresoviedo.app.model3D.view.ModelActivity;
+import org.andresoviedo.app.model3D.view.SelectionActivity;
 import org.andresoviedo.app.util.Utils;
 import org.andresoviedo.dddmodel2.R;
 
@@ -53,7 +54,7 @@ public class MainActivity extends Activity {
 		// installExamples();
 
 		// Start Model activity.
-		MainActivity.this.startActivity(new Intent(MainActivity.this.getApplicationContext(), MenuActivity.class));
+		MainActivity.this.startActivity(new Intent(MainActivity.this.getApplicationContext(), SelectionActivity.class));
 		MainActivity.this.finish();
 	}
 

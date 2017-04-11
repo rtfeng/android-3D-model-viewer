@@ -63,8 +63,8 @@ public class MenuActivity extends ListActivity {
 				// Start Model activity.
 				Intent intent = new Intent(MenuActivity.this.getApplicationContext(), DemoActivity.class);
 				MenuActivity.this.startActivity(intent);
-			}
 				break;
+			}
 			case LOAD_MODEL: {
 				Intent target = Utils.createGetContentIntent();
 				Intent intent = Intent.createChooser(target, "Select a file");

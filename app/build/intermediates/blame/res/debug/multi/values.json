@@ -14,12 +14,12 @@
                 "from": {
                     "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
                     "position": {
-                        "startLine": 14,
+                        "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 528,
-                        "endLine": 22,
+                        "startOffset": 587,
+                        "endLine": 23,
                         "endColumn": 19,
-                        "endOffset": 792
+                        "endOffset": 851
                     }
                 }
             },
@@ -32,14 +32,7 @@
                     "endOffset": 361
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/colors.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 19,
-                        "endColumn": 49,
-                        "endOffset": 64
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/colors.xml"
                 }
             },
             {
@@ -51,14 +44,7 @@
                     "endOffset": 596
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/dimens.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 92,
-                        "endColumn": 57,
-                        "endOffset": 145
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/dimens.xml"
                 }
             },
             {
@@ -70,14 +56,7 @@
                     "endOffset": 652
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/dimens.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 151,
-                        "endColumn": 55,
-                        "endOffset": 202
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/dimens.xml"
                 }
             },
             {
@@ -89,14 +68,7 @@
                     "endOffset": 1450
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 28,
-                        "startColumn": 4,
-                        "startOffset": 2074,
-                        "endColumn": 797,
-                        "endOffset": 2867
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -108,14 +80,7 @@
                     "endOffset": 1503
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 166,
-                        "endColumn": 52,
-                        "endOffset": 214
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -127,14 +92,7 @@
                     "endOffset": 1566
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 44,
-                        "startColumn": 4,
-                        "startOffset": 3516,
-                        "endColumn": 62,
-                        "endOffset": 3574
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -146,14 +104,7 @@
                     "endOffset": 1619
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 59,
-                        "endColumn": 52,
-                        "endOffset": 107
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -165,14 +116,7 @@
                     "endOffset": 1671
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 113,
-                        "endColumn": 51,
-                        "endOffset": 160
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -184,14 +128,7 @@
                     "endOffset": 1713
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 33,
-                        "startColumn": 4,
-                        "startOffset": 3080,
-                        "endColumn": 41,
-                        "endOffset": 3117
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -203,14 +140,7 @@
                     "endOffset": 2906
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 26,
-                        "startColumn": 4,
-                        "startOffset": 860,
-                        "endColumn": 1192,
-                        "endOffset": 2048
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -222,14 +152,7 @@
                     "endOffset": 2946
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 24,
-                        "startColumn": 4,
-                        "startOffset": 800,
-                        "endColumn": 39,
-                        "endOffset": 835
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -241,14 +164,7 @@
                     "endOffset": 3028
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 32,
-                        "startColumn": 4,
-                        "startOffset": 2997,
-                        "endColumn": 81,
-                        "endOffset": 3074
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -260,14 +176,7 @@
                     "endOffset": 3066
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 487,
-                        "endColumn": 37,
-                        "endOffset": 520
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -279,14 +188,7 @@
                     "endOffset": 3104
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 34,
-                        "startColumn": 4,
-                        "startOffset": 3123,
-                        "endColumn": 37,
-                        "endOffset": 3156
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -298,14 +200,7 @@
                     "endOffset": 3154
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 35,
-                        "startColumn": 4,
-                        "startOffset": 3162,
-                        "endColumn": 49,
-                        "endOffset": 3207
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -317,14 +212,7 @@
                     "endOffset": 3204
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 30,
-                        "startColumn": 4,
-                        "startOffset": 2901,
-                        "endColumn": 49,
-                        "endOffset": 2946
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -336,14 +224,7 @@
                     "endOffset": 3248
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 31,
-                        "startColumn": 4,
-                        "startOffset": 2952,
-                        "endColumn": 43,
-                        "endOffset": 2991
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -355,14 +236,7 @@
                     "endOffset": 3301
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 299,
-                        "endColumn": 52,
-                        "endOffset": 347
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -374,14 +248,7 @@
                     "endOffset": 3354
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 245,
-                        "endColumn": 52,
-                        "endOffset": 293
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -393,14 +260,7 @@
                     "endOffset": 3409
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 407,
-                        "endColumn": 54,
-                        "endOffset": 457
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -408,17 +268,17 @@
                     "startLine": 32,
                     "startColumn": 4,
                     "startOffset": 3414,
-                    "endColumn": 52,
-                    "endOffset": 3462
+                    "endColumn": 57,
+                    "endOffset": 3467
                 },
                 "from": {
                     "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
                     "position": {
-                        "startLine": 9,
+                        "startLine": 7,
                         "startColumn": 4,
-                        "startOffset": 353,
-                        "endColumn": 52,
-                        "endOffset": 401
+                        "startOffset": 245,
+                        "endColumn": 57,
+                        "endOffset": 298
                     }
                 }
             },
@@ -426,179 +286,124 @@
                 "to": {
                     "startLine": 33,
                     "startColumn": 4,
-                    "startOffset": 3467,
-                    "endColumn": 66,
-                    "endOffset": 3529
+                    "startOffset": 3472,
+                    "endColumn": 52,
+                    "endOffset": 3520
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 41,
-                        "startColumn": 4,
-                        "startOffset": 3422,
-                        "endColumn": 66,
-                        "endOffset": 3484
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 34,
                     "startColumn": 4,
-                    "startOffset": 3534,
-                    "endColumn": 55,
-                    "endOffset": 3585
+                    "startOffset": 3525,
+                    "endColumn": 66,
+                    "endOffset": 3587
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 40,
-                        "startColumn": 4,
-                        "startOffset": 3365,
-                        "endColumn": 55,
-                        "endOffset": 3416
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 35,
                     "startColumn": 4,
-                    "startOffset": 3590,
-                    "endColumn": 59,
-                    "endOffset": 3645
+                    "startOffset": 3592,
+                    "endColumn": 55,
+                    "endOffset": 3643
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 39,
-                        "startColumn": 4,
-                        "startOffset": 3304,
-                        "endColumn": 59,
-                        "endOffset": 3359
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 36,
                     "startColumn": 4,
-                    "startOffset": 3650,
-                    "endColumn": 61,
-                    "endOffset": 3707
+                    "startOffset": 3648,
+                    "endColumn": 59,
+                    "endOffset": 3703
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 38,
-                        "startColumn": 4,
-                        "startOffset": 3241,
-                        "endColumn": 61,
-                        "endOffset": 3298
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 37,
                     "startColumn": 4,
-                    "startOffset": 3712,
-                    "endLine": 44,
-                    "endColumn": 12,
-                    "endOffset": 3999
+                    "startOffset": 3708,
+                    "endColumn": 61,
+                    "endOffset": 3765
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/styles.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 231,
-                        "endLine": 15,
-                        "endColumn": 12,
-                        "endOffset": 522
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/strings.xml"
                 }
             },
             {
                 "to": {
-                    "startLine": 45,
+                    "startLine": 38,
                     "startColumn": 4,
-                    "startOffset": 4004,
-                    "endLine": 47,
+                    "startOffset": 3770,
+                    "endLine": 40,
                     "endColumn": 12,
-                    "endOffset": 4159
+                    "endOffset": 3848
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/styles.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 563,
-                        "endLine": 20,
-                        "endColumn": 12,
-                        "endOffset": 720
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/styles.xml"
                 }
             },
             {
                 "to": {
-                    "startLine": 48,
+                    "startLine": 41,
                     "startColumn": 4,
-                    "startOffset": 4164,
-                    "endLine": 54,
+                    "startOffset": 3853,
+                    "endLine": 43,
                     "endColumn": 12,
-                    "endOffset": 4487
+                    "endOffset": 3920
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/styles.xml",
-                    "position": {
-                        "startLine": 29,
-                        "startColumn": 4,
-                        "startOffset": 1072,
-                        "endLine": 35,
-                        "endColumn": 12,
-                        "endOffset": 1401
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/styles.xml"
                 }
             },
             {
                 "to": {
-                    "startLine": 55,
+                    "startLine": 44,
                     "startColumn": 4,
-                    "startOffset": 4492,
+                    "startOffset": 3925,
+                    "endLine": 50,
+                    "endColumn": 12,
+                    "endOffset": 4248
+                },
+                "from": {
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 51,
+                    "startColumn": 4,
+                    "startOffset": 4253,
                     "endColumn": 35,
-                    "endOffset": 4523
+                    "endOffset": 4284
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/styles.xml",
-                    "position": {
-                        "startLine": 37,
-                        "startColumn": 4,
-                        "startOffset": 1409,
-                        "endColumn": 36,
-                        "endOffset": 1441
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/styles.xml"
                 }
             },
             {
                 "to": {
-                    "startLine": 56,
+                    "startLine": 52,
                     "startColumn": 4,
-                    "startOffset": 4528,
-                    "endLine": 61,
+                    "startOffset": 4289,
+                    "endLine": 57,
                     "endColumn": 12,
-                    "endOffset": 4859
+                    "endOffset": 4620
                 },
                 "from": {
-                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/styles.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 728,
-                        "endLine": 27,
-                        "endColumn": 12,
-                        "endOffset": 1064
-                    }
+                    "file": "/Users/lyk/Documents/android-3D-model-viewer/app/src/main/res/values/styles.xml"
                 }
             }
         ]

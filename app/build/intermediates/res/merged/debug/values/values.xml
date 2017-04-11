@@ -30,21 +30,17 @@
     <string name="title_activity_demo">Demo</string>
     <string name="title_activity_menu">Menu</string>
     <string name="title_activity_model">Model</string>
+    <string name="title_activity_selection">Menu</string>
     <string name="title_activity_text">Text</string>
     <string name="toggle_boundingbox">Toggle bounding box</string>
     <string name="toggle_lights">Toggle lights</string>
     <string name="toggle_textures">Toggle textures</string>
     <string name="toggle_wireframe">Toggle wireframe</string>
     <style name="AppBaseTheme" parent="android:Theme.Light">
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-
-        -->
+        
     </style>
     <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        
     </style>
     <style name="ButtonBar">
         <item name="android:paddingLeft">2dp</item>
