@@ -67,11 +67,11 @@ public class SceneLoader {
 		this.parent = main;
 	}
 
-	public void init() {
+	public void init(boolean useMFile) {
 
 		// Load object
 		if (parent.getParamAssetDir() != null) {
-			Object3DBuilder.loadV5Async(parent, parent.getParamAssetDir(),
+			Object3DBuilder.loadV5Async(useMFile, parent, parent.getParamAssetDir(),
 					parent.getParamAssetFilename(), new Callback() {
 
 						@Override

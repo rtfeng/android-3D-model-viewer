@@ -1,6 +1,10 @@
 package org.andresoviedo.app.model3D.view;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 import org.andresoviedo.app.model3D.services.ExampleSceneLoader;
 import org.andresoviedo.app.model3D.services.SceneLoader;
@@ -9,6 +13,7 @@ import org.andresoviedo.dddmodel2.R;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.res.AssetManager;
 import android.opengl.GLSurfaceView;
 import android.os.Build;
 import android.os.Bundle;
@@ -27,6 +32,7 @@ public class ModelActivity extends Activity {
 
 	private String paramAssetDir;
 	private String paramAssetFilename;
+    private boolean useMFile;
 
 
 	private GLSurfaceView gLView;
@@ -44,6 +50,7 @@ public class ModelActivity extends Activity {
 		if (b != null) {
 			this.paramAssetDir = b.getString("assetDir");
 			this.paramAssetFilename = b.getString("assetFilename");
+            this.useMFile = b.getBoolean("use_model_file");
 		}
 		Log.i("Renderer", "Params: assetDir '" + paramAssetDir + "', assetFilename '" + paramAssetFilename);
 
@@ -60,7 +67,7 @@ public class ModelActivity extends Activity {
 		} else {
 			scene = new SceneLoader(this);
 		}
-		scene.init();
+		scene.init(this.useMFile);
 
 		// Show the Up button in the action bar.
 		setupActionBar();

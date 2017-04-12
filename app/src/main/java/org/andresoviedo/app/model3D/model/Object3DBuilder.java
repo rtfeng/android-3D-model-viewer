@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.res.AssetManager;
 import android.opengl.GLES20;
 import android.os.AsyncTask;
+import android.os.Environment;
 import android.util.Log;
 
 import org.andresoviedo.app.model3D.services.WavefrontLoader;
@@ -16,11 +17,16 @@ import org.andresoviedo.app.model3D.services.WavefrontLoader.Tuple3;
 import org.andresoviedo.app.util.math.Math3DUtils;
 import org.apache.commons.io.IOUtils;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.nio.BufferOverflowException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -833,15 +839,62 @@ public final class Object3DBuilder {
 		return bb;
 	}
 
-	public static void loadV5Async(Activity parent, String assetsDir, String assetName,
+	public static void loadV5Async(boolean useMFile, Activity parent, String assetsDir, String assetName,
 								   final Callback callback) {
 		Log.i("Loader", "Opening " + "asset " + assetsDir + assetName + "...");
+        //handle the case using the m file provided in the course
+        if (useMFile){
+            Log.d("Object3DBuilder", "parsing m file");
+            AssetManager assetManager = parent.getAssets();
+            try {
+                InputStream in = assetManager.open(assetsDir+assetName);
+                BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+                String path = Environment.getExternalStorageDirectory() + File.separator + "hcimodels";
+                File folder = new File(path);
+                folder.mkdirs();
+                String filename = assetName.split("\\.")[0];
+                File file = new File(folder, filename+".obj");
+                Log.d("Object3DBuilder", "the created m file is : " + path + File.separator + filename+".obj");
+                FileOutputStream fOut = new FileOutputStream(file);
+                BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fOut));
+
+                String line = reader.readLine();
+                while (line != null){
+                    String[] tokens = line.split("\\s+");
+                    if (tokens[0].equals("Vertex")){
+                        bw.write("v " + tokens[2] + " " + tokens[3] + " " + tokens[4] + " \n");
+                        bw.newLine();
+                    }
+                    else if (tokens[0].equals("Face")){
+                        bw.write("f " + tokens[2] + " " + tokens[3] + " " + tokens[4] + " \n");
+                        bw.newLine();
+                    }
+                    line = reader.readLine();
+                }
+                bw.close();
+                fOut.close();
+                assetsDir = path + File.separator;
+                assetName = filename+".obj";
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Log.d("Object3DBuilder", "parsed m file");
+        }
+
 		final InputStream modelDataStream;
 		final InputStream modelDataStream2;
 		try {
 			if (assetsDir != null) {
-				modelDataStream = parent.getAssets().open(assetsDir + assetName);
-				modelDataStream2 = parent.getAssets().open(assetsDir + assetName);
+                if(!useMFile){
+                    modelDataStream = parent.getAssets().open(assetsDir + assetName);
+                    modelDataStream2 = parent.getAssets().open(assetsDir + assetName);
+                }
+                else {
+                    File file = new File(assetsDir+assetName);
+                    modelDataStream = new FileInputStream(file);
+                    modelDataStream2 = new FileInputStream(file);
+                }
+
 			} else {
 				throw new IllegalArgumentException("Model data source not specified");
 			}

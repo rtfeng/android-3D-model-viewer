@@ -30,7 +30,7 @@ public class ExampleSceneLoader extends SceneLoader {
 	}
 
 	public void init() {
-		super.init();
+		super.init(false);
 		new AsyncTask<Void, Void, Void>() {
 
 			ProgressDialog dialog = new ProgressDialog(parent);
