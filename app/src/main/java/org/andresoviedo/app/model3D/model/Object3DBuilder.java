@@ -862,11 +862,11 @@ public final class Object3DBuilder {
                 while (line != null){
                     String[] tokens = line.split("\\s+");
                     if (tokens[0].equals("Vertex")){
-                        bw.write("v " + tokens[2] + " " + tokens[3] + " " + tokens[4] + " \n");
+                        bw.write("v " + tokens[2] + " " + tokens[3] + " " + tokens[4] + " ");
                         bw.newLine();
                     }
                     else if (tokens[0].equals("Face")){
-                        bw.write("f " + tokens[2] + " " + tokens[3] + " " + tokens[4] + " \n");
+                        bw.write("f " + tokens[2] + " " + tokens[3] + " " + tokens[4] + " ");
                         bw.newLine();
                     }
                     line = reader.readLine();
