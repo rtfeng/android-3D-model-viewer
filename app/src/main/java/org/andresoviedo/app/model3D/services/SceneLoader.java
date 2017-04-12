@@ -10,6 +10,7 @@ import org.andresoviedo.app.model3D.view.ModelActivity;
 
 import android.opengl.GLES20;
 import android.opengl.Matrix;
+import android.os.AsyncTask;
 import android.os.SystemClock;
 import android.util.Log;
 import android.widget.Toast;
@@ -90,6 +91,17 @@ public class SceneLoader {
 						}
 					});
 		}
+		//build axis
+        /*new AsyncTask<Void, Void, Void>() {
+
+            @Override
+            protected Void doInBackground(Void... voids) {
+                Object3DData axis = Object3DBuilder.buildAxis().setId("axis");
+                axis.setColor(new float[]{1.0f, 0, 0, 1.0f});
+                addObject(axis);
+                return null;
+            }
+        }.execute();*/
 	}
 
 	public void draw(Object3DData obj, float[] pMatrix, float[] vMatrix, int drawMode, int drawSize) {
