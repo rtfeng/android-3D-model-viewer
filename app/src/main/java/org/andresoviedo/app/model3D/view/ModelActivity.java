@@ -1,19 +1,7 @@
 package org.andresoviedo.app.model3D.view;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-
-import org.andresoviedo.app.model3D.services.ExampleSceneLoader;
-import org.andresoviedo.app.model3D.services.SceneLoader;
-import org.andresoviedo.app.util.Utils;
-import org.andresoviedo.dddmodel2.R;
-
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.res.AssetManager;
 import android.opengl.GLSurfaceView;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,6 +10,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import org.andresoviedo.app.model3D.services.SceneLoader;
+import org.andresoviedo.app.util.Utils;
+import org.andresoviedo.dddmodel2.R;
 
 /**
  * This activity represents the container for our 3D viewer.
@@ -62,11 +54,8 @@ public class ModelActivity extends Activity {
 		setContentView(gLView);
 
 		// Create our 3D sceneario
-		if (paramAssetFilename == null) {
-			scene = new ExampleSceneLoader(this);
-		} else {
-			scene = new SceneLoader(this);
-		}
+
+        scene = new SceneLoader(this);
 		scene.init(this.useMFile);
 
 		// Show the Up button in the action bar.
