@@ -158,29 +158,29 @@ public class ModelRenderer implements GLSurfaceView.Renderer {
 			float[] lightPos = scene.getLightPos();
 
 			// Do a complete rotation every 10 seconds.
-			long time = SystemClock.uptimeMillis() % 10000L;
-			float angleInDegrees = (360.0f / 10000.0f) * ((int) time);
+//			long time = SystemClock.uptimeMillis() % 10000L;
+//			float angleInDegrees = (360.0f / 10000.0f) * ((int) time);
 
 			lightPoint.getVertexArrayBuffer().clear();
 			lightPoint.getVertexArrayBuffer().put(lightPos);
 
-			rotation[1] = angleInDegrees;
-			lightPoint.setRotation(rotation);
+//			rotation[1] = angleInDegrees;
+//			lightPoint.setRotation(rotation);
 
 			// calculate light matrix
 
 			// Calculate position of the light. Rotate and then push into the distance.
-			Matrix.setIdentityM(mMatrixLight, 0);
-			// Matrix.translateM(mMatrixLight, 0, lightPos[0], lightPos[1], lightPos[2]);
-			Matrix.rotateM(mMatrixLight, 0, angleInDegrees, 0.0f, 1.0f, 0.0f);
-			// Matrix.translateM(mMatrixLight, 0, 0.0f, 0.0f, 2.0f);
-
-			Matrix.multiplyMV(mLightPosInWorldSpace, 0, mMatrixLight, 0, lightPos, 0);
-
-			Matrix.multiplyMV(lightPosInEyeSpace, 0, modelViewMatrix, 0, mLightPosInWorldSpace, 0);
-
-			Matrix.multiplyMM(mvMatrixLight, 0, modelViewMatrix, 0, mMatrixLight, 0);
-			Matrix.multiplyMM(mvpMatrixLight, 0, modelProjectionMatrix, 0, mvMatrixLight, 0);
+//			Matrix.setIdentityM(mMatrixLight, 0);
+//			// Matrix.translateM(mMatrixLight, 0, lightPos[0], lightPos[1], lightPos[2]);
+//			Matrix.rotateM(mMatrixLight, 0, angleInDegrees, 0.0f, 1.0f, 0.0f);
+//			// Matrix.translateM(mMatrixLight, 0, 0.0f, 0.0f, 2.0f);
+//
+//			Matrix.multiplyMV(mLightPosInWorldSpace, 0, mMatrixLight, 0, lightPos, 0);
+//
+//			Matrix.multiplyMV(lightPosInEyeSpace, 0, modelViewMatrix, 0, mLightPosInWorldSpace, 0);
+//
+//			Matrix.multiplyMM(mvMatrixLight, 0, modelViewMatrix, 0, mMatrixLight, 0);
+//			Matrix.multiplyMM(mvpMatrixLight, 0, modelProjectionMatrix, 0, mvMatrixLight, 0);
 
 			drawer.getPointDrawer().draw(lightPoint, modelProjectionMatrix, modelViewMatrix, -1, lightPosInEyeSpace);
 			// // Draw a point to indicate the light.
