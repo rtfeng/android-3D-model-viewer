@@ -55,7 +55,7 @@ public class Camera {
 
 	public Camera() {
 		// Initialize variables...
-		this(0, 0, 3, 0, 0, -1, 0, 1, 0);
+		this(0, 0, 2, 0, 0, -1, 0, 1, 0);
 
 	}
 
@@ -200,9 +200,9 @@ public class Camera {
 		zPos = zPos - dX * zRight + dY * zArriba;
 		zView = zView - dX * zRight + dY * zArriba;
 
-		xUp = xArriba;
-		yUp = yArriba;
-		zUp = zArriba;
+//		xUp = xArriba;
+//		yUp = yArriba;
+//		zUp = zArriba;
 
 //		xPos = xPos - 10 * dX;
 //		xView = xView - 10 * dX;

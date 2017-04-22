@@ -77,7 +77,7 @@ public class SceneLoader {
 
 						@Override
 						public void onLoadComplete(Object3DData data) {
-							data.centerAndScale(1.0f);
+							data.centerAndScale(0.5f);
 							addObject(data);
 
 						}
