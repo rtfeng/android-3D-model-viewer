@@ -6,12 +6,12 @@ package org.andresoviedo.app.model3D.entities;
 
 public final class BoundingBox {
 	private final String id;
-	private float xMin = Float.MAX_VALUE;
-	private float xMax = Float.MIN_VALUE;
-	private float yMin = Float.MAX_VALUE;
-	private float yMax = Float.MIN_VALUE;
-	private float zMin = Float.MAX_VALUE;
-	private float zMax = Float.MIN_VALUE;
+	private float xMax = Float.MAX_VALUE;
+	private float xMin = Float.MIN_VALUE;
+	private float yMax = Float.MAX_VALUE;
+	private float yMin = Float.MIN_VALUE;
+	private float zMax = Float.MAX_VALUE;
+	private float zMin = Float.MIN_VALUE;
 
 	public BoundingBox(String id, float xMin, float xMax, float yMin, float yMax, float zMin, float zMax) {
 		this.id = id;

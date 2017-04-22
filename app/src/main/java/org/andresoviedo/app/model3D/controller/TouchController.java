@@ -21,8 +21,9 @@ public class TouchController {
 	private static final String TAG = TouchController.class.getName();
 
 	private static final int TOUCH_STATUS_ZOOMING_CAMERA = 1;
-	private static final int TOUCH_STATUS_ROTATING_CAMERA = 4;
+//	private static final int TOUCH_STATUS_ROTATING_CAMERA = 4;
 	private static final int TOUCH_STATUS_MOVING_WORLD = 5;
+	private static final int TOUCH_STATUS_MOVING_ORIGIN = 6;
 
 	private final ModelSurfaceView view;
 	private final ModelRenderer mRenderer;
@@ -32,10 +33,14 @@ public class TouchController {
 	float y1 = Float.MIN_VALUE;
 	float x2 = Float.MIN_VALUE;
 	float y2 = Float.MIN_VALUE;
+	float x3 = Float.MIN_VALUE;
+	float y3 = Float.MIN_VALUE;
 	float dx1 = Float.MIN_VALUE;
 	float dy1 = Float.MIN_VALUE;
 	float dx2 = Float.MIN_VALUE;
 	float dy2 = Float.MIN_VALUE;
+	float dx3 = Float.MIN_VALUE;
+	float dy3 = Float.MIN_VALUE;
 
 	float length = Float.MIN_VALUE;
 	float previousLength = Float.MIN_VALUE;
@@ -60,6 +65,8 @@ public class TouchController {
 	private float previousY1;
 	private float previousX2;
 	private float previousY2;
+	private float previousX3;
+	private float previousY3;
 	float[] previousVector = new float[4];
 	float[] vector = new float[4];
 	float[] rotationVector = new float[4];
@@ -114,7 +121,7 @@ public class TouchController {
 
 		pointerCount = motionEvent.getPointerCount();
 
-		if (pointerCount == 1) {
+/*		if (pointerCount == 1) {
 			x1 = motionEvent.getX();
 			y1 = motionEvent.getY();
 			if (gestureChanged) {
@@ -124,6 +131,7 @@ public class TouchController {
 			}
 			dx1 = x1 - previousX1;
 			dy1 = y1 - previousY1;
+			fingersAreClosing =  dx1 < 15 && dy1 < 15;
 		} else if (pointerCount == 2) {
 			x1 = motionEvent.getX(0);
 			y1 = motionEvent.getY(0);
@@ -149,6 +157,11 @@ public class TouchController {
 			dy1 = y1 - previousY1;
 			dx2 = x2 - previousX2;
 			dy2 = y2 - previousY2;
+
+			dx1 = (x1 - previousX1)/2;
+			dy1 = (y1 - previousY1)/2;
+			dx2 = (x2 - previousX2)/2;
+			dy2 = (y2 - previousY2)/2;
 
 			rotationVector[0] = (previousVector[1] * vector[2]) - (previousVector[2] * vector[1]);
 			rotationVector[1] = (previousVector[2] * vector[0]) - (previousVector[0] * vector[2]);
@@ -178,27 +191,70 @@ public class TouchController {
 			fingersAreClosing = !isOneFixedAndOneMoving && (Math.abs(dx1 + dx2) < 10 && Math.abs(dy1 + dy2) < 10);
 			isRotating = !isOneFixedAndOneMoving && (dx1 != 0 && dy1 != 0 && dx2 != 0 && dy2 != 0)
 					&& rotationVector[2] != 0;
+		} else if (pointerCount == 3) {
+			//TODO: Add Distances
+			x1 = motionEvent.getX(0);
+			y1 = motionEvent.getY(0);
+			x2 = motionEvent.getX(1);
+			y2 = motionEvent.getY(1);
+			x3 = motionEvent.getX(2);
+			y3 = motionEvent.getY(2);
+			if (gestureChanged) {
+				Log.d("Touch", "x:" + x1 + ",y:" + y1);
+				previousX1 = x1;
+				previousY1 = y1;
+				Log.d("Touch", "x:" + x2 + ",y:" + y2);
+				previousX2 = x2;
+				previousY2 = y2;
+				Log.d("Touch", "x:" + x3 + ",y:" + y3);
+				previousX3 = x3;
+				previousY3 = y3;
+			}
+			dx1 = x1 - previousX1;
+			dy1 = y1 - previousY1;
+			dx2 = x2 - previousX2;
+			dy2 = y2 - previousY2;
+			dx3 = x3 - previousX3;
+			dy3 = y3 - previousY3;
+			fingersAreClosing = Math.abs(dx1 + dx2 + dx3) < 10 && Math.abs(dy1 + dy2 + dy3) < 10;
+		}*/
+
+		//Test
+		if (pointerCount == 1) {
+			//TODO: Add Distances
+			x1 = motionEvent.getX(0);
+			y1 = motionEvent.getY(0);
+			if (gestureChanged) {
+				Log.d("Touch", "x:" + x1 + ",y:" + y1);
+				previousX1 = x1;
+				previousY1 = y1;
+			}
+			dx1 = x1 - previousX1;
+			dy1 = y1 - previousY1;
+			fingersAreClosing = Math.abs(dx1) < 10 && Math.abs(dy1) < 10;
 		}
 
-		if (pointerCount == 1 && simpleTouch) {
+/*		if (pointerCount == 1 && simpleTouch) {
 			// calculate the world coordinates where the user is clicking (near plane and far plane)
 			float[] hit1 = unproject(x1, y1, 0);
 			float[] hit2 = unproject(x1, y1, 1);
 			// check if the ray intersect any of our objects and select the nearer
 			selectObjectImpl(hit1, hit2);
-		}
+		}*/
 
 
 		int max = Math.max(mRenderer.getWidth(), mRenderer.getHeight());
 		if (touchDelay > 1) {
 			// INFO: Procesar gesto
-			if (pointerCount == 1 && currentPress1 > 4.0f) {
+			/*if (pointerCount == 1 && currentPress1 > 4.0f) {
 			} else if (pointerCount == 1) {
-				touchStatus = TOUCH_STATUS_MOVING_WORLD;
-				// Log.d("TouchController", "Translating camera (dx,dy) '" + dx1 + "','" + dy1 + "'...");
-				dx1 = (float)(dx1 / max * Math.PI * 2);
-				dy1 = (float)(dy1 / max * Math.PI * 2);
-				mRenderer.getCamera().translateCamera(dx1,dy1);
+				if (fingersAreClosing) {
+					touchStatus = TOUCH_STATUS_MOVING_WORLD;
+					// Log.d("TouchController", "Translating camera (dx,dy) '" + dx1 + "','" + dy1 + "'...");
+					dx1 = (float) (dx1 / max * Math.PI * 2);
+					dy1 = (float) (dy1 / max * Math.PI * 2);
+					mRenderer.getCamera().translateCamera(dx1, dy1);
+				}
 			} else if (pointerCount == 2) {
 				if (fingersAreClosing) {
 					touchStatus = TOUCH_STATUS_ZOOMING_CAMERA;
@@ -206,11 +262,30 @@ public class TouchController {
 					Log.i("Camera", "Zooming '" + zoomFactor + "'...");
 					mRenderer.getCamera().MoveCameraZ(zoomFactor);
 				}
-				if (isRotating) {
+				*//*else if (isRotating) {
 					touchStatus = TOUCH_STATUS_ROTATING_CAMERA;
 					Log.i("Camera", "Rotating camera '" + Math.signum(rotationVector[2]) + "'...");
 					mRenderer.getCamera().Rotate((float) (Math.signum(rotationVector[2]) / Math.PI) / 4);
-				}
+				}*//*
+			} else if (pointerCount == 3) {
+				//TODO: Add scroll
+//				if(fingersAreClosing) {
+					touchStatus = TOUCH_STATUS_MOVING_ORIGIN;
+					dx1 = (float)(dx1 / max);
+					dy1 = (float)(dy1 / max);
+					Log.i("Camera", "Moving ...");
+					mRenderer.getCamera().MoveCamera(dx1, dy1);
+//				}
+			}*/
+
+			//Test
+			if (pointerCount == 1) {
+				//TODO: Add scroll
+				touchStatus = TOUCH_STATUS_MOVING_ORIGIN;
+				dx1 = (float)(dx1 / max);
+				dy1 = (float)(dy1 / max);
+				Log.i("Camera", "Moving ...");
+				mRenderer.getCamera().MoveCamera(dx1, dy1);
 			}
 
 			// INFO: Realizamos la acci�n

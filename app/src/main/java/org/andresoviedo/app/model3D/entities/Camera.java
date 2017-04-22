@@ -10,6 +10,7 @@ import org.andresoviedo.app.model3D.services.SceneLoader;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 /*
  Class Name:
@@ -127,6 +128,108 @@ public class Camera {
 		zUp = zArriba + zPos;
 	}
 
+	public void MoveCamera(float dX, float dY) {
+		float vlen;
+
+		// Translating the camera requires a directional vector to rotate
+		// First we need to get the direction at which we are looking.
+		// The look direction is the view minus the position (where we are).
+		// Get the Direction of the view.
+		float xLook = 0, yLook = 0, zLook = 0;
+		xLook = xView - xPos;
+		yLook = yView - yPos;
+		zLook = zView - zPos;
+		vlen = Matrix.length(xLook, yLook, zLook);
+		xLook /= vlen;
+		yLook /= vlen;
+		zLook /= vlen;
+
+		Log.d("MoveCamera", "Look - " + "(" + Float.toString(xLook) + "," + Float.toString(yLook) + "," + Float.toString(zLook) + "), vlen = " + vlen);
+
+		// Arriba is the 3D vector that is **almost** equivalent to the 2D user Y vector
+		// Get the direction of the up vector
+		float xArriba = 0, yArriba = 0, zArriba = 0;
+		xArriba = xUp - xPos;
+		yArriba = yUp - yPos;
+		zArriba = zUp - zPos;
+		// Normalize the Right.
+		vlen = Matrix.length(xArriba, yArriba, zArriba);
+		xArriba /= vlen;
+		yArriba /= vlen;
+		zArriba /= vlen;
+
+		Log.d("MoveCamera", "Arriba1 - " + "(" + Float.toString(xArriba) + "," + Float.toString(yArriba) + "," + Float.toString(zArriba) + "), vlen = " + vlen);
+
+		// Right is the 3D vector that is equivalent to the 2D user X vector
+		// In order to calculate the Right vector, we have to calculate the cross product of the
+		// previously calculated vectors...
+
+		// The cross product is defined like:
+		// A x B = (a1, a2, a3) x (b1, b2, b3) = (a2 * b3 - b2 * a3 , - a1 * b3 + b1 * a3 , a1 * b2 - b1 * a2)
+		float xRight = 0, yRight = 0, zRight = 0;
+		xRight = (yLook * zArriba) - (zLook * yArriba);
+		yRight = (zLook * xArriba) - (xLook * zArriba);
+		zRight = (xLook * yArriba) - (yLook * xArriba);
+		// Normalize the Right.
+		vlen = Matrix.length(xRight, yRight, zRight);
+		xRight /= vlen;
+		yRight /= vlen;
+		zRight /= vlen;
+
+		Log.d("MoveCamera", "Right - " + "(" + Float.toString(xRight) + "," + Float.toString(yRight) + "," + Float.toString(zRight) + "), vlen = " + vlen);
+
+		// Once we have the Look & Right vector, we can recalculate where is the final Arriba vector,
+		// so its equivalent to the user 2D Y vector.
+		xArriba = (yRight * zLook) - (zRight * yLook);
+		yArriba = (zRight * xLook) - (xRight * zLook);
+		zArriba = (xRight * yLook) - (yRight * xLook);
+		// Normalize the Right.
+		vlen = Matrix.length(xArriba, yArriba, zArriba);
+		xArriba /= vlen;
+		yArriba /= vlen;
+		zArriba /= vlen;
+
+		Log.d("MoveCamera", "Arriba2 - " + "(" + Float.toString(xArriba) + "," + Float.toString(yArriba) + "," + Float.toString(zArriba) + "), vlen = " + vlen);
+
+		xPos = xPos - dX * xRight + dY * xArriba;
+		xView = xView - dX * xRight + dY * xArriba;
+
+		yPos = yPos - dX * yRight + dY * yArriba;
+		yView = yView - dX * yRight + dY * yArriba;
+
+		zPos = zPos - dX * zRight + dY * zArriba;
+		zView = zView - dX * zRight + dY * zArriba;
+
+		xUp = xArriba;
+		yUp = yArriba;
+		zUp = zArriba;
+
+//		xPos = xPos - 10 * dX;
+//		xView = xView - 10 * dX;
+//
+//		yPos = yPos + 10 * dY;
+//		yView = yView + 10 * dY;
+
+		Log.d("MoveCamera", "dX = " + dX + ";" + "dY = " + dY + ";");
+
+//		float[] coordinates = new float[] { xPos, yPos, zPos, 1, xView, yView, zView, 1, xUp, yUp, zUp, 1 };
+
+
+/*		if (isOutOfBounds(buffer)) return;
+
+		xPos = buffer[0] / buffer[3];
+		yPos = buffer[1] / buffer[3];
+		zPos = buffer[2] / buffer[3];
+		xView = buffer[4 + 0] / buffer[4 + 3];
+		yView = buffer[4 + 1] / buffer[4 + 3];
+		zView = buffer[4 + 2] / buffer[4 + 3];
+		xUp = buffer[8 + 0] / buffer[8 + 3];
+		yUp = buffer[8 + 1] / buffer[8 + 3];
+		zUp = buffer[8 + 2] / buffer[8 + 3];*/
+
+		setChanged(true);
+	}
+
 	public void MoveCameraZ(float direction) {
 		// Moving the camera requires a little more then adding 1 to the z or
 		// subracting 1.
@@ -205,7 +308,7 @@ public class Camera {
 		return false;
 	}
 
-	public void StrafeCam(float dX, float dY) {
+/*	public void StrafeCam(float dX, float dY) {
 		// Now if we were to call UpdateCamera() we will be moving the camera
 		// foward or backwards.
 		// We don't want that here. We want to strafe. To do so we have to get
@@ -273,9 +376,9 @@ public class Camera {
 
 		// UpdateCamera(xRight, yRight, zRight, dX);
 		UpdateCamera(xSky, ySky, zSky, dX);
-	}
+	}*/
 
-	public void RotateCamera(float AngleDir, float xSpeed, float ySpeed, float zSpeed) {
+/*	public void RotateCamera(float AngleDir, float xSpeed, float ySpeed, float zSpeed) {
 		float xNewLookDirection = 0, yNewLookDirection = 0, zNewLookDirection = 0;
 		float xLookDirection = 0, yLookDirection = 0, zLookDirection = 0;
 		float CosineAngle = 0, SineAngle = 0;
@@ -325,13 +428,13 @@ public class Camera {
 		xView = xPos + xNewLookDirection;
 		yView = yPos + yNewLookDirection;
 		zView = zPos + zNewLookDirection;
-	}
+	}*/
 
-	public void Rotate(float incX, float incY) {
-		RotateByMouse(AIM + incX, AIM + incY, AIM, AIM);
-	}
+//	public void Rotate(float incX, float incY) {
+//		RotateByMouse(AIM + incX, AIM + incY, AIM, AIM);
+//	}
 
-	void RotateByMouse(float mousePosX, float mousePosY, float midX, float midY) {
+	/*void RotateByMouse(float mousePosX, float mousePosY, float midX, float midY) {
 		float yDirection = 0.0f; // Direction angle.
 		float yRotation = 0.0f; // Rotation angle.
 
@@ -387,7 +490,7 @@ public class Camera {
 		// Rotate the camera.
 		RotateCamera(yRotation, xAxis, yAxis, zAxis);
 		RotateCamera(yDirection, 0, 1, 0);
-	}
+	}*/
 
 	/**
 	 * Translation is the movement that makes the Earth around the Sun.
@@ -526,8 +629,8 @@ public class Camera {
 
 	public float[] getVectors() {
 		// @formatter:off
-		return new float[] { 
-				xPos, yPos, zPos, 1f, 
+		return new float[] {
+				xPos, yPos, zPos, 1f,
 				xView, yView, yView, 1f,
 				xUp, yUp, zUp, 1f };
 		// @formatter:on
@@ -544,7 +647,7 @@ public class Camera {
 		matrix[offset+4 ]=cos_1*x*y + z*sin   ;  	matrix[offset+5 ]=cos_1*y*y + cos     ;   matrix[offset+6 ]=cos_1*y*z - x*sin   ;   matrix[offset+7]=0   ;
 		matrix[offset+8 ]=cos_1*z*x - y*sin   ;  	matrix[offset+9 ]=cos_1*y*z + x*sin   ;   matrix[offset+10]=cos_1*z*z + cos    ;   matrix[offset+11]=0  ;
 		matrix[offset+12]=0           		 ;      matrix[offset+13]=0          		  ;   matrix[offset+14]=0          		  ;   matrix[offset+15]=1  ;
-		
+
 		// @formatter:on
 	}
 
