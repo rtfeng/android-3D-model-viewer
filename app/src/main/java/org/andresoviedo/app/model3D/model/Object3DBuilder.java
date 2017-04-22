@@ -854,7 +854,7 @@ public final class Object3DBuilder {
                 folder.mkdirs();
                 String filename = assetName.split("\\.")[0];
                 File file = new File(folder, filename+".obj");
-                Log.d("Object3DBuilder", "the created m file is : " + path + File.separator + filename+".obj");
+                Log.d("Object3DBuilder", "the created obj file is : " + path + File.separator + filename+".obj");
                 FileOutputStream fOut = new FileOutputStream(file);
                 BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fOut));
 

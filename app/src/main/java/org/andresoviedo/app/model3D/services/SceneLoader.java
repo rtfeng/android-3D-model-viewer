@@ -64,6 +64,8 @@ public class SceneLoader {
 	 */
 	private Object3DData selectedObject = null;
 
+    private Object3DData onlyObject = null;
+
 	public SceneLoader(ModelActivity main) {
 		this.parent = main;
 	}
@@ -79,7 +81,7 @@ public class SceneLoader {
 						public void onLoadComplete(Object3DData data) {
 							data.centerAndScale(1.0f);
 							addObject(data);
-
+                            onlyObject = data;
 						}
 
 						@Override
@@ -193,4 +195,11 @@ public class SceneLoader {
 		this.selectedObject = selectedObject;
 	}
 
+    public Object3DData getOnlyObject() {
+        return onlyObject;
+    }
+
+    public void setOnlyObject(Object3DData onlyObject) {
+        this.onlyObject = onlyObject;
+    }
 }

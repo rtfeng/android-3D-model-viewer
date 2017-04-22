@@ -59,24 +59,24 @@ public class ModelActivity extends Activity {
 		scene.init(this.useMFile);
 
 		// Show the Up button in the action bar.
-		setupActionBar();
+//		setupActionBar();
 
 		// TODO: Alert user when there is no multitouch support (2 fingers). He won't be able to rotate or zoom for
 		// example
 		Utils.printTouchCapabilities(getPackageManager());
 
-		setupOnSystemVisibilityChangeListener();
+//		setupOnSystemVisibilityChangeListener();
 	}
 
 	/**
 	 * Set up the {@link android.app.ActionBar}, if the API is available.
 	 */
-	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
-	private void setupActionBar() {
-		// if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-		// getActionBar().setDisplayHomeAsUpEnabled(true);
-		// }
-	}
+//	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+//	private void setupActionBar() {
+//		// if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+//		// getActionBar().setDisplayHomeAsUpEnabled(true);
+//		// }
+//	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -85,41 +85,41 @@ public class ModelActivity extends Activity {
 		return true;
 	}
 
-	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
-	private void setupOnSystemVisibilityChangeListener() {
-		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
-			return;
-		}
-		getWindow().getDecorView().setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
-			@Override
-			public void onSystemUiVisibilityChange(int visibility) {
-				// Note that system bars will only be "visible" if none of the
-				// LOW_PROFILE, HIDE_NAVIGATION, or FULLSCREEN flags are set.
-				if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
-					// TODO: The system bars are visible. Make any desired
-					// adjustments to your UI, such as showing the action bar or
-					// other navigational controls.
-					if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-						hideSystemUIDelayed(3000);
-					}
-				} else {
-					// TODO: The system bars are NOT visible. Make any desired
-					// adjustments to your UI, such as hiding the action bar or
-					// other navigational controls.
-				}
-			}
-		});
-	}
+//	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+//	private void setupOnSystemVisibilityChangeListener() {
+//		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
+//			return;
+//		}
+//		getWindow().getDecorView().setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
+//			@Override
+//			public void onSystemUiVisibilityChange(int visibility) {
+//				// Note that system bars will only be "visible" if none of the
+//				// LOW_PROFILE, HIDE_NAVIGATION, or FULLSCREEN flags are set.
+//				if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+//					// TODO: The system bars are visible. Make any desired
+//					// adjustments to your UI, such as showing the action bar or
+//					// other navigational controls.
+//					if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//						hideSystemUIDelayed(3000);
+//					}
+//				} else {
+//					// TODO: The system bars are NOT visible. Make any desired
+//					// adjustments to your UI, such as hiding the action bar or
+//					// other navigational controls.
+//				}
+//			}
+//		});
+//	}
 
-	@Override
-	public void onWindowFocusChanged(boolean hasFocus) {
-		super.onWindowFocusChanged(hasFocus);
-		if (hasFocus) {
-			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-				hideSystemUIDelayed(3000);
-			}
-		}
-	}
+//	@Override
+//	public void onWindowFocusChanged(boolean hasFocus) {
+//		super.onWindowFocusChanged(hasFocus);
+//		if (hasFocus) {
+//			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//				hideSystemUIDelayed(3000);
+//			}
+//		}
+//	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -136,67 +136,74 @@ public class ModelActivity extends Activity {
 		case R.id.model_toggle_lights:
 			scene.toggleLighting();
 			break;
+//            case R.id.model_reset_item:
+//                scene = new SceneLoader(this);
+//                scene.init(this.useMFile);
+//                Log.d("ModelActivity", "reset clicked!");
+//                Log.d("ModelActivity", this.scene.getOnlyObject()==null?"null onlyobj":"not null onlyobj");
+//                break;
+
 		}
 		return super.onOptionsItemSelected(item);
 	}
 
-	private void hideSystemUIDelayed(long millis) {
-		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
-			return;
-		}
-		handler.postDelayed(new Runnable() {
-			public void run() {
-				hideSystemUI();
-			}
-		}, millis);
-	}
+//	private void hideSystemUIDelayed(long millis) {
+//		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
+//			return;
+//		}
+//		handler.postDelayed(new Runnable() {
+//			public void run() {
+//				hideSystemUI();
+//			}
+//		}, millis);
+//	}
 
-	private void hideSystemUI() {
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-			hideSystemUIKitKat();
-		} else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-			hideSystemUIJellyBean();
-		}
-	}
+//	private void hideSystemUI() {
+//		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//			hideSystemUIKitKat();
+//		} else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+//			hideSystemUIJellyBean();
+//		}
+//	}
 
 	// This snippet hides the system bars.
-	@TargetApi(Build.VERSION_CODES.KITKAT)
-	private void hideSystemUIKitKat() {
-		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
-			return;
-		}
-		// Set the IMMERSIVE flag.
-		// Set the content to appear under the system bars so that the content
-		// doesn't resize when the system bars hide and show.
-		final View decorView = getWindow().getDecorView();
-		decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-				| View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
-				| View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
-				| View.SYSTEM_UI_FLAG_IMMERSIVE);
-	}
-
-	@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-	private void hideSystemUIJellyBean() {
-		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
-			return;
-		}
-		final View decorView = getWindow().getDecorView();
-		decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-				| View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-				| View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_LOW_PROFILE);
-	}
-
-	// This snippet shows the system bars. It does this by removing all the flags
-	// except for the ones that make the content appear under the system bars.
-	@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-	private void showSystemUI() {
-		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
-			return;
-		}
-		final View decorView = getWindow().getDecorView();
-		decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-				| View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-	}
+//	@TargetApi(Build.VERSION_CODES.KITKAT)
+//	private void hideSystemUIKitKat() {
+//		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
+//			return;
+//		}
+//		// Set the IMMERSIVE flag.
+//		// Set the content to appear under the system bars so that the content
+//		// doesn't resize when the system bars hide and show.
+//		final View decorView = getWindow().getDecorView();
+//		decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+//				| View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
+//				| View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
+//				| View.SYSTEM_UI_FLAG_IMMERSIVE);
+//	}
+//
+//	@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+//	private void hideSystemUIJellyBean() {
+//		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
+//			return;
+//		}
+//		final View decorView = getWindow().getDecorView();
+//		decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+//				| View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+//				| View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_LOW_PROFILE);
+//	}
+//
+//	// This snippet shows the system bars. It does this by removing all the flags
+//	// except for the ones that make the content appear under the system bars.
+//	@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+//	private void showSystemUI() {
+//		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
+//			return;
+//		}
+//		final View decorView = getWindow().getDecorView();
+//		decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+//				| View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+//	}
 
 	public String getParamAssetDir() {
 		return paramAssetDir;
