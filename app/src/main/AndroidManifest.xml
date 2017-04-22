@@ -26,8 +26,7 @@
         </activity>
         <activity
             android:name="org.andresoviedo.app.model3D.view.SelectionActivity"
-            android:label="@string/title_activity_selection"
-            android:parentActivityName="org.andresoviedo.app.model3D.MainActivity" >
+            android:label="@string/title_activity_selection">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

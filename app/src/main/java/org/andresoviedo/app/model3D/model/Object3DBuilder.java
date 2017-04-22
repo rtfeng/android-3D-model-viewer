@@ -47,7 +47,7 @@ public final class Object3DBuilder {
 	/**
 	 * Default vertices colors
 	 */
-	private static float[] DEFAULT_COLOR = {1.0f, 1.0f, 0, 1.0f};
+	private static float[] DEFAULT_COLOR = {1.0f, 1.0f, 1.0f, 1.0f};
 
 	final static float[] axisVertexLinesData = new float[]{
 			//@formatter:off

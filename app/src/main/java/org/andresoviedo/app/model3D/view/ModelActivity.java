@@ -2,6 +2,7 @@ package org.andresoviedo.app.model3D.view;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.graphics.Color;
 import android.opengl.GLSurfaceView;
 import android.os.Build;
 import android.os.Bundle;
@@ -51,7 +52,10 @@ public class ModelActivity extends Activity {
 		// Create a GLSurfaceView instance and set it
 		// as the ContentView for this Activity.
 		gLView = new ModelSurfaceView(this);
-		setContentView(gLView);
+//        gLView.setBackgroundColor(Color.parseColor("#E57373");
+        setContentView(gLView);
+//		setContentView(R.layout.activity_m_model);
+//        gLView = (ModelSurfaceView) findViewById(R.id.id_model_surfaceview);
 
 		// Create our 3D sceneario
 
