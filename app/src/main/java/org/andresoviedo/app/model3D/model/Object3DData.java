@@ -584,7 +584,7 @@ public class Object3DData {
 
 	public BoundingBox getBoundingBox() {
 		if (boundingBox == null && vertexBuffer != null) {
-			float xMax = Float.MAX_VALUE, xMin = Float.MIN_VALUE, yMax = Float.MAX_VALUE, yMin = Float.MIN_VALUE, zMax = Float.MAX_VALUE, zMin = Float.MIN_VALUE;
+			float xMin = Float.MAX_VALUE, xMax = Float.MIN_VALUE, yMin = Float.MAX_VALUE, yMax = Float.MIN_VALUE, zMin = Float.MAX_VALUE, zMax = Float.MIN_VALUE;
 			vertexBuffer.position(0);
 			while (vertexBuffer.hasRemaining()) {
 				float vertexx = vertexBuffer.get();

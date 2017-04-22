@@ -121,7 +121,7 @@ public class TouchController {
 
 		pointerCount = motionEvent.getPointerCount();
 
-/*		if (pointerCount == 1) {
+		if (pointerCount == 1) {
 			x1 = motionEvent.getX();
 			y1 = motionEvent.getY();
 			if (gestureChanged) {
@@ -131,7 +131,7 @@ public class TouchController {
 			}
 			dx1 = x1 - previousX1;
 			dy1 = y1 - previousY1;
-			fingersAreClosing =  dx1 < 15 && dy1 < 15;
+//			fingersAreClosing =  dx1 < 15 && dy1 < 15;
 		} else if (pointerCount == 2) {
 			x1 = motionEvent.getX(0);
 			y1 = motionEvent.getY(0);
@@ -216,14 +216,14 @@ public class TouchController {
 			dy2 = y2 - previousY2;
 			dx3 = x3 - previousX3;
 			dy3 = y3 - previousY3;
-			fingersAreClosing = Math.abs(dx1 + dx2 + dx3) < 10 && Math.abs(dy1 + dy2 + dy3) < 10;
-		}*/
+//			fingersAreClosing = Math.abs(dx1 + dx2 + dx3) < 10 && Math.abs(dy1 + dy2 + dy3) < 10;
+		}
 
 		//Test
-		if (pointerCount == 1) {
+/*		if (pointerCount == 1) {
 			//TODO: Add Distances
-			x1 = motionEvent.getX(0);
-			y1 = motionEvent.getY(0);
+			x1 = motionEvent.getX();
+			y1 = motionEvent.getY();
 			if (gestureChanged) {
 				Log.d("Touch", "x:" + x1 + ",y:" + y1);
 				previousX1 = x1;
@@ -231,30 +231,29 @@ public class TouchController {
 			}
 			dx1 = x1 - previousX1;
 			dy1 = y1 - previousY1;
-			fingersAreClosing = Math.abs(dx1) < 10 && Math.abs(dy1) < 10;
-		}
+		}*/
 
-/*		if (pointerCount == 1 && simpleTouch) {
+		if (pointerCount == 1 && simpleTouch) {
 			// calculate the world coordinates where the user is clicking (near plane and far plane)
 			float[] hit1 = unproject(x1, y1, 0);
 			float[] hit2 = unproject(x1, y1, 1);
 			// check if the ray intersect any of our objects and select the nearer
 			selectObjectImpl(hit1, hit2);
-		}*/
+		}
 
 
 		int max = Math.max(mRenderer.getWidth(), mRenderer.getHeight());
 		if (touchDelay > 1) {
 			// INFO: Procesar gesto
-			/*if (pointerCount == 1 && currentPress1 > 4.0f) {
+			if (pointerCount == 1 && currentPress1 > 4.0f) {
 			} else if (pointerCount == 1) {
-				if (fingersAreClosing) {
+//				if (fingersAreClosing) {
 					touchStatus = TOUCH_STATUS_MOVING_WORLD;
 					// Log.d("TouchController", "Translating camera (dx,dy) '" + dx1 + "','" + dy1 + "'...");
 					dx1 = (float) (dx1 / max * Math.PI * 2);
 					dy1 = (float) (dy1 / max * Math.PI * 2);
 					mRenderer.getCamera().translateCamera(dx1, dy1);
-				}
+//				}
 			} else if (pointerCount == 2) {
 				if (fingersAreClosing) {
 					touchStatus = TOUCH_STATUS_ZOOMING_CAMERA;
@@ -262,11 +261,11 @@ public class TouchController {
 					Log.i("Camera", "Zooming '" + zoomFactor + "'...");
 					mRenderer.getCamera().MoveCameraZ(zoomFactor);
 				}
-				*//*else if (isRotating) {
-					touchStatus = TOUCH_STATUS_ROTATING_CAMERA;
-					Log.i("Camera", "Rotating camera '" + Math.signum(rotationVector[2]) + "'...");
-					mRenderer.getCamera().Rotate((float) (Math.signum(rotationVector[2]) / Math.PI) / 4);
-				}*//*
+//				else if (isRotating) {
+//					touchStatus = TOUCH_STATUS_ROTATING_CAMERA;
+//					Log.i("Camera", "Rotating camera '" + Math.signum(rotationVector[2]) + "'...");
+//					mRenderer.getCamera().Rotate((float) (Math.signum(rotationVector[2]) / Math.PI) / 4);
+//				}
 			} else if (pointerCount == 3) {
 				//TODO: Add scroll
 //				if(fingersAreClosing) {
@@ -276,17 +275,17 @@ public class TouchController {
 					Log.i("Camera", "Moving ...");
 					mRenderer.getCamera().MoveCamera(dx1, dy1);
 //				}
-			}*/
+			}
 
 			//Test
-			if (pointerCount == 1) {
+/*			if (pointerCount == 1) {
 				//TODO: Add scroll
 				touchStatus = TOUCH_STATUS_MOVING_ORIGIN;
 				dx1 = (float)(dx1 / max);
 				dy1 = (float)(dy1 / max);
 				Log.i("Camera", "Moving ...");
 				mRenderer.getCamera().MoveCamera(dx1, dy1);
-			}
+			}*/
 
 			// INFO: Realizamos la acci�n
 			switch (touchStatus) {
