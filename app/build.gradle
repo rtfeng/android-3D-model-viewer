@@ -3,13 +3,11 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 19
     buildToolsVersion "25.0.2"
-
     defaultConfig {
-        applicationId "org.andresoviedo.dddmodel2"
         minSdkVersion 19
         targetSdkVersion 19
+        applicationId 'ntu.Ruitao.Assignment2'
     }
-
     signingConfigs {
         release {
             storeFile file("android-3d-model-viewer.jks")
@@ -18,13 +16,14 @@ android {
             keyPassword ""
         }
     }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.release
         }
+    }
+    productFlavors {
     }
 }
 

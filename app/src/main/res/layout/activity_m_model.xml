@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background_color"/>
-    <org.andresoviedo.app.model3D.view.ModelSurfaceView
+    <ntu.Ruitao.Assignment2.model3D.view.ModelSurfaceView
         android:id="@+id/id_model_surfaceview"
         android:layout_height="match_parent"
         android:layout_width="match_parent"/>
